@@ -1,0 +1,41 @@
+#######################################
+# Syntax Coloring Map SD
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+vStateMachine_TickConfigure	KEYWORD1
+xTimeMachine			KEYWORD1
+xStateMachine			KEYWORD1
+xStateMachineHandler	KEYWORD1
+xStateMachineEventFlags	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+vSM_Init				KEYWORD2
+vSM_RunAtInfinitLoop	KEYWORD2
+vSM_setTimerIdx	KEYWORD2
+vSM_setTimerIdxAndType	KEYWORD2
+vSM_setNextState		KEYWORD2
+vSM_setNextStateIdx		KEYWORD2
+vSM_setNextStateIdxAndType	KEYWORD2
+vSM_setTimeoutTimer		KEYWORD2
+vSM_setTimeoutTimerIdx	KEYWORD2
+vSM_timeoutIdx			KEYWORD2	
+vSM_stateTypeIdx		KEYWORD2
+vSM_initEventFlags		KEYWORD2
+vSM_setEventFlags		KEYWORD2
+vSM_clearEventFlags		KEYWORD2
+vSM_testEventFlags		KEYWORD2
+vStateMachineTickHook 	KEYWORD2
+vStateMachineMillis 	KEYWORD2
+vStateMachine_TickConfigure	KEYWORD2
+vSM_Tick				KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+FILE_READ	LITERAL1
+FILE_WRITE	LITERAL1
