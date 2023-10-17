@@ -10,24 +10,7 @@
 #ifndef REMOTEACCESSCORE_H
 #define	REMOTEACCESSCORE_H
 
-#if defined(__XC16__)
-    #include <xc.h>
-#elif defined(__C30__)
-    #if defined(__dsPIC33E__)
-    	#include <p33Exxxx.h>
-    #elif defined(__dsPIC33F__)
-    	#include <p33Fxxxx.h>
-    #endif
-#endif
-//#include "system.h"
-//#include "GPIOconfig.h"
-//#include "API_Manager.h"
-//#include "ubloxControl.h"
-//#include "crc16.h"
-//#include <libpic30.h>
-//#include "DEE Emulation.h"
 #include "StateMachine.h"
-//#include "SST25VF020B.h"
 #include <string.h>
 
 #define SYNC0	0x50
@@ -35,27 +18,9 @@
 
 #define FRAME_TIMEOUT	6000
 
-typedef struct _sUCIdata { //
-	uint8_t statusICEL;
-	uint8_t statusILA;
-	uint8_t statusAUX;
-	uint8_t pulseBilling;
-    int voltage12V;
-	int current12V;
-    int voltage3V45;
-	int current3V45;
-	int	lot;
-	uint8_t serialNr[3];
-    uint8_t acceptorCode[3];
-	uint8_t acceptDateDay;
-	uint8_t acceptDateMonth;
-	uint16_t acceptDateYear;
-} UCIdata;
-
 enum FEEDBACKSTATUS{
 	WRITE_ERROR = 0xFF,
 	WRITE_OK = 0x00,
-
 };
 
 typedef struct _sFeedbackWrite{
