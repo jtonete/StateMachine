@@ -10,19 +10,8 @@
 #ifndef BLUETOOTHCONTROL_H
 #define	BLUETOOTHCONTROL_H
 
-#if defined(__XC16__)
-    #include <xc.h>
-#elif defined(__C30__)
-    #if defined(__dsPIC33E__)
-    	#include <p33Exxxx.h>
-    #elif defined(__dsPIC33F__)
-    	#include <p33Fxxxx.h>
-    #endif
-#endif
-//#include "system.h"
 #include "StateMachine.h"
 #include "remoteAccessCore.h"
-//#include "UART1.h"
 
 void bluetoothControl_RXHandler(char data);
 void bluetoothControl_init(uint16_t machineStateHandle, xStateMachineEventFlags *flags);
