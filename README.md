@@ -1,6 +1,25 @@
 # StateMachine
-This is a framework to develop with timed state machines in C that can be ported to 8/16/32bits microcontrollers with lightweight footprint.
+This is a framework to develop with timed state machines in C that can be ported to 8/16/32 bits microcontrollers with a lightweight footprint.
 *The compiles should support function pointers.
+
+The big idea is to work on developing state-by-state in different unique functions and linking the states with a scheduler.
+I used this framework to work around the missing implementation of FreeRtos in some old microcontrollers of the dsPIC family. As I like the implementation I decide to port to Arduino and share it with all.
+
+      void state1()
+      {
+         ...
+         doSomething()
+         ...
+         setNextState(state2, ...);
+      }
+      
+      void state2()
+      {
+         ...
+         doSomethingDifferent()
+         ...
+         setNextState(state1, ...);
+      }
 
 # How to use
 This framework was developed to work with microchip microcontrollers and was ported to the Arduino platform. This repository has the Arduino version of examples, but with a bit of work, it can be ported to any microcontroller.
@@ -124,7 +143,7 @@ The `vSM_setNextStateIdx();` receive as parameter: The Id of state, the function
 
 # Porting
 
-To create a porting of machine state, edit the StateMachine_Port files `.c` and `.h`
+To create a porting of the machine state, edit the StateMachine_Port files `.c` and `.h`
 
 1. Edit the `vStateMachine_TickConfigure()` function to configure a hardware timer of 1ms and call the `vSM_Tick();` every 1ms.
 2. Define some functions to overload in the framework
@@ -133,3 +152,12 @@ To create a porting of machine state, edit the StateMachine_Port files `.c` and 
         #define StateMachine_EnableTick  interrupts();             // enable all interrupts//
         #define StateMachine_NOP         Serial.println("NOP")     //
         #define StateMachine_LOG(log)    Serial.println(log)
+
+
+The implementation is based on articles by Pedro Bertoleti and Rodrigo Almeida on www.embarcados.com.br. Thank you for sharing your knowledge.
+https://github.com/phfbertoleti
+https://github.com/rmaalmeida
+
+https://embarcados.com.br/desenvolvendo-um-rtos-introducao/
+https://embarcados.com.br/maquina-de-estado/
+https://embarcados.com.br/arquitetura-de-desenvolvimento-de-software-i/
