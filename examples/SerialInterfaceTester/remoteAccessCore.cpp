@@ -6,38 +6,10 @@
  */
 
 #include "remoteAccessCore.h"
-//#include "DEE Emulation.h"
-/*
-extern UbloxPIN ubx_PIN;
-extern UbloxNetwork ubx_Net;
-extern UbloxCSD ubx_csd;
-extern UCIdata uci_info;
-extern UbloxFlags ubx_Flags;
-extern uint16_t ubx_MShandle;
-extern uint8_t irq_flags[4];
-extern PulseMeterObj pulse_meter;
-extern UbloxNetworkOperList networkList[UBX_NETWORKLIST_SIZE];
-extern char PUK[UBX_SIMPUK_LEN+1];
-extern fxsStateMachine PS_State_Mac;
-extern UbloxGPRS ubx_gprs;
-extern xVersion versionInfos;
-extern const UbloxAPN APNlist[UBX_APN_SIZE];
-extern networkCellLock netCellLock;
-extern timeStamp timestamp_info;
-#ifdef FIX_DARUMA
-extern FixDarumaObj fixDaruma;
-extern uint16_t timeDaruma;
-#endif
-#ifdef SITE_SURVEY
-    extern siteSurvey survey;
-#endif
-extern TupPreferences tupPref;
-extern RSSIhistObj RSSIhist;
-*/
 
-#define VERSION_FIRMWARE    0x0001
-#define PRODUCT_ID		    0xCAFE
-#define JSON_VERSION	    0
+#define VERSION_FIRMWARE	0x0001
+#define PRODUCT_ID		0xCAFE
+#define JSON_VERSION	    	0
 
 const xVersion version = {
 	.product_id      = PRODUCT_ID,
