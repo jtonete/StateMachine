@@ -3,7 +3,7 @@ This is a framework to develop with timed state machines in C that can be ported
 *The compiles should support function pointers.
 
 The big idea is to work on developing state-by-state in different unique functions and linking the states with a scheduler.
-I used this framework to work around the missing implementation of FreeRtos in some old microcontrollers of the dsPIC family. As I like the implementation I decide to port to Arduino and share it with all.
+I used this framework to work around the missing implementation of FreeRtos in some old microcontrollers of the dsPIC family. As I liked the implementation I decided to port to Arduino and share it with all.
 
       void state1()
       {
